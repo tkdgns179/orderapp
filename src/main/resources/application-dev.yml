@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+
+spring:
+  h2:
+    console:
+      enabled: true
+    port: 9000
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:./data/testdb
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    check-template-location: true
+    cache: false
+
+  mvc:
+    static-path-pattern: /static/**
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
