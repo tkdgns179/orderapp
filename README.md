@@ -25,7 +25,10 @@
   복호화된 값이 일치하는지 확인한 후 세션처리를 해준다.
 
 ### 2022-10-09 16:00~ ( applicaiton-dev.yml 설정 )
-- 나중에 배포를 위해 일단 작업하고있는 설정파일을 분리
+  - 나중에 배포를 위해 일단 작업하고있는 설정파일을 분리 (개발 & 배포)
   - 현재 H2DB 콘솔 로그인이 안됨
   - Intellij에서 active profiles를 dev로 바꾸었으나 application-dev.yml에서 임포트된 spring.profiles.active 프로퍼티가 유효하지 않다고함 18번째 라인
-    -  해당 값은 dev로 설정되어있음. -> (해결) application.yml 파일을 하나 더 만들고 spring.profiles.active=dev로 설정
+      해당 값은 dev로 설정되어있음.
+    - (해결) application.yml 파일을 만들고 spring.profiles.active=dev 작성
+  - jpa auto create시 ~ expected identifier~ 에러 발생
+    - (해결) 테이블 이름 USER가 예약어라 생성이 안됐음

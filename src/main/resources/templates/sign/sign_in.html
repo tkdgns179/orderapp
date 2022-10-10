@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/sign/sign.css}" />
+  </head>
+  <body>
+  <div id="login-form-wrap">
+    <h2>환영 합니다</h2>
+    <form id="login-form">
+      <p>
+        <input type="text" id="username" name="username" placeholder="닉네임" required
+
+        ><i class="validation"><span></span><span></span></i>
+      </p>
+      <p>
+        <input type="password" id="password" name="password" placeholder="비밀번호" required><i class="validation"><span></span><span></span></i>
+      </p>
+      <p>
+        <input type="submit" id="login" value="접속하기">
+      </p>
+    </form>
+    <div id="create-account-wrap">
+      <p>회원가입을 하지 않으셨나요? <a href="/sign/sign_up">계정 생성하기</a><p>
+    </div><!--create-account-wrap-->
+  </div><!--login-form-wrap-->
+  <!-- partial -->
+  </body>
+</html>

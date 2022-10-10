@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String signInForm(Model model) {
 
-        model.addAttribute("name", "김상훈");
-        return "index";
+        return "sign/sign_in";
     }
 
+    @GetMapping("sign/sign_up")
+    public void signUpForm() {}
 }
