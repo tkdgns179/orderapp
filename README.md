@@ -15,6 +15,14 @@
 
 <hr>
 
+> 2. 가게(점포)
+- PK number - 가게 일련번호 shop_id
+- NOT NULL char - 가게 주소 shop_address
+- NOT NULL char - 가게 이름 shop_name
+- NOT NULL date - 가게 등록일 create_date
+
+<hr>
+
 ### 2022-10-09 12:00~ ( 설계 - 로그인 페이지 )
 - 유저타입은 2종류가 존재한다. 주문하는 손님, 가게 주인
 - 유저타입이 2개 존재함으로 메인페이지(index.html)는 아이디, 패스워드,  
@@ -32,3 +40,6 @@
     - (해결) application.yml 파일을 만들고 spring.profiles.active=dev 작성
   - jpa auto create시 ~ expected identifier~ 에러 발생
     - (해결) 테이블 이름 USER가 예약어라 생성이 안됐음
+
+### 2022-10-10 20:00 ( 로그인(메인 페이지), 회원가입(sign_up.html) 페이지 퍼블리싱 )
+- 상업용 프로젝트가 아니라 로그인 페이지 긁어와서 수정
