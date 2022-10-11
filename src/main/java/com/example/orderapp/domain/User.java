@@ -1,6 +1,6 @@
 package com.example.orderapp.domain;
 
-import com.example.orderapp.ShopDto;
+import com.example.orderapp.dto.SignUpDto;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -49,16 +48,16 @@ public class User extends BaseTimeEntity {
     @Getter
     @AllArgsConstructor
     enum UserType {
-        Customer("손님"),
-        Store("점포");
+        customer("손님"),
+        store("점포");
 
-        private String typeName;
+        private final String typeName;
     }
 
-    private Shop register(ShopDto shopDto) {
+    private Shop register(SignUpDto signUpDto) {
         if (userType.getTypeName().equals("손님")) {
             //TODO DTO로 받은 가게정보 넣어서 생성
-            return shopDto.getShopEntity();
+            return signUpDto.getShopEntity();
         }
         else {
             //TODO null 처리할지 계획 중

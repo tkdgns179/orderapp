@@ -23,11 +23,19 @@
         <input type="password" id="re_password" name="re_password" placeholder="비밀번호 확인하기" required><i class="validation"><span></span><span></span></i>
       </p>
       <p>
+      <p>
+        <select name="user_type">
+          <option disabled selected value>가입하실 계정의 유형을 선택해주세요</option>
+          <option value="customer">손님</option>
+          <option value="store">가게</option>
+        </select>
+      </p>
         <input type="submit" id="login" value="함께해요 ">
       </p>
     </form>
+
     <div id="create-account-wrap">
-      <p>접속하고 싶으신가요?  <a href="/">로그인 하기</a><p>
+      <p>이미 가입하셨나요?  <a href="/">로그인 하기</a><p>
     </div><!--create-account-wrap-->
   </div><!--login-form-wrap-->
   <!-- partial -->

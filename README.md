@@ -35,11 +35,18 @@
 ### 2022-10-09 16:00~ ( applicaiton-dev.yml 설정 )
   - 나중에 배포를 위해 일단 작업하고있는 설정파일을 분리 (개발 & 배포)
   - 현재 H2DB 콘솔 로그인이 안됨
+    - 기존 아이디/패스워드 사용
   - Intellij에서 active profiles를 dev로 바꾸었으나 application-dev.yml에서 임포트된 spring.profiles.active 프로퍼티가 유효하지 않다고함 18번째 라인
       해당 값은 dev로 설정되어있음.
     - (해결) application.yml 파일을 만들고 spring.profiles.active=dev 작성
   - jpa auto create시 ~ expected identifier~ 에러 발생
     - (해결) 테이블 이름 USER가 예약어라 생성이 안됐음
 
-### 2022-10-10 20:00 ( 로그인(메인 페이지), 회원가입(sign_up.html) 페이지 퍼블리싱 )
+### 2022-10-10 19:00~ ( 로그인(메인 페이지), 회원가입(sign_up.html) 페이지 퍼블리싱 )
 - 상업용 프로젝트가 아니라 로그인 페이지 긁어와서 수정
+
+### 2022-10-12 02:00 ( 기타 설정문제 )
+- jpa의 ddl-auto가 안됨
+  - h2-console JDBC URL 주소가 안 바뀌어있던 문제
+- css 파일에서 background url 경로를 주었는데 가져오질 못함 (/static/img/~.png) 경로상의 문제인지  
+  브라우저에서 정적파일 요청해도 가져오질 못함 아직 원인 파악중.
