@@ -9,14 +9,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 
 @Entity
 @Table(name = "ORDER_USER")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Getter
 public class User extends BaseTimeEntity {
 
     @Id
@@ -25,9 +27,6 @@ public class User extends BaseTimeEntity {
 
     @Column(name = "user_name", length = 10, nullable = false)
     private String userName;
-
-    @Column(name = "user_nickname", length = 20, nullable = false)
-    private String userNickname;
 
     @Column(name = "user_password", length = 20, nullable = false)
     private String userPassword;
@@ -45,19 +44,10 @@ public class User extends BaseTimeEntity {
     @JoinColumn(name = "shop_id")
     private Shop shop;
 
-    @Getter
-    @AllArgsConstructor
-    enum UserType {
-        customer("손님"),
-        store("점포");
-
-        private final String typeName;
-    }
-
     private Shop register(SignUpDto signUpDto) {
         if (userType.getTypeName().equals("손님")) {
             //TODO DTO로 받은 가게정보 넣어서 생성
-            return signUpDto.getShopEntity();
+            return null; // signUpDto.getShopEntity();
         }
         else {
             //TODO null 처리할지 계획 중

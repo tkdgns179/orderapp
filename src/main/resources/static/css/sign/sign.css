@@ -58,8 +58,8 @@ input, select {
 }
 
 select {
-  appearance: none;
-  background: url("/static/img/select_icon.png") no-repeat right 24px center;
+  appearance: none !important;
+  background: url("/static/img/select_icon.png") no-repeat right 24px center !important;
 }
 
 input[type="text"],

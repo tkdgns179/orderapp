@@ -6,7 +6,7 @@
 > 1. 유저(고객)
 - PK (식별키) char(20) - 핸드폰 번호 phone_number
 - NOT NULL, char(10) - 이름 user_name
-- NOT NULL, char(20) - 닉네임 user_nickname
+- ~~- NOT NULL, char(20) - 닉네임 user_nickname~~
 - NOT NULL, char(20) - 패스워드 user_password
 - FK (외래키) number - 주문 번호 order_id
 - NOT NULL char(50) - 배달 주소 user_address
@@ -49,4 +49,14 @@
 - jpa의 ddl-auto가 안됨
   - h2-console JDBC URL 주소가 안 바뀌어있던 문제
 - css 파일에서 background url 경로를 주었는데 가져오질 못함 (/static/img/~.png) 경로상의 문제인지  
-  브라우저에서 정적파일 요청해도 가져오질 못함 아직 원인 파악중.
+  브라우저에서 정적파일 요청해도 가져오질 못함
+  - 캐시문제 였던듯함 다시 해보니 가져옴
+
+### 2022-10-18 00:00 ( 테스트 케이스 작성 )
+- 설계를 전과 다르게 했는데 너무 복잡해짐 (시큐리티X, ..) 
+- User의 PK가 String @GeneratedValue 어노테이션 사용안됨 
+- ROLL_USER 컬럼으로 User 타입을 정할까 하다가 enum UserType으로 분기해서  
+  store("점포")일 때, customer("손님")일 때 각각 따로 처리하려고 했으나  
+  약간 설계가 이상하다고 느껴지기 시작
+- Junit 테스트에서 그런건진 몰라도 일단 JpaRepository의 save호출시 select  
+만 하고 insert는 안함 
